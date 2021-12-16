@@ -1,6 +1,6 @@
 package com.vtc.todomanage.model;
 
-import lombok.Data;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -35,6 +35,7 @@ public class User {
 
     @NotBlank
     @Size(max = 120)
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private String password;
 
     @ManyToMany(fetch = FetchType.LAZY)
